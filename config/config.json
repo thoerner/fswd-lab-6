@@ -2,7 +2,7 @@
   "development": {
     "username": "tim",
     "password": "y2ffudzx",
-    "database": "fswd_development",
+    "database": "fswd_dev",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

@@ -8,7 +8,7 @@ var server = require('../../lib/server');
 // libraries
 var request = require('supertest');
 
-xdescribe('server', function() {
+describe('server', function() {
     ['David', 'John', 'Lee'].forEach(function(name) {
         it('should respond with "Hello, ' + name + '!" on /' + name, function(done) {
             request(server)
