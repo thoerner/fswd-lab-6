@@ -1,14 +1,14 @@
 {
   "development": {
-    "username": "postgres",
-    "password": null,
+    "username": "tim",
+    "password": "y2ffudzx",
     "database": "fswd_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "postgres",
-    "password": null,
+    "username": "tim",
+    "password": "y2ffudzx",
     "database": "fswd_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
