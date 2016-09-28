@@ -31,4 +31,5 @@ describe('/users', function() {
       .get('/users/login')
       .expect(200);
   });
+
 });
