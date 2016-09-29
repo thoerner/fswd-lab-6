@@ -1,29 +1,36 @@
 doctype html
 html
-  head
-    script(src="/jspm_packages/system.js")
-    script(src="/config.js")
-    script
-      | System.import('app');
-    title Hello world!
-  body(style="display: none")
-    div.container
-      .page-header
-        block header
-          p
-              a(href='/') Home
-              if !username
-                  | &nbsp;|&nbsp;
-                  a(href='/users/login') Login
-                  | &nbsp;|&nbsp;
-                  a(href='/users/register') Register
-              else
-                  | &nbsp;|&nbsp;
-                  a(href='/users/' + username) My Page
-                  | &nbsp;|&nbsp;
-                  a(href='/users/logout') Logout
-      if flash_message
-        p()
-            font(color='red')
-                = flash_message
-      block body
+    head
+        script(src='/jspm_packages/system.js')
+        script(src='/config.js')
+        script
+            | System.import('app');
+        title #{title}
+    body(style='display: none')
+        div.container
+            .page-header
+                block header
+                    // h2 Tim's FSWD Site
+                    img(src="http://i.imgur.com/DGVvuWi.png", style="width:350px;height:125;")
+                    br
+                    p(align='right')
+                        a(href='/') Home
+                        | &nbsp;|&nbsp;
+                        if username
+                            a(href='/users/' + username) My Page
+                            | &nbsp;|&nbsp;
+                        a(href='/tasks') Tasks
+                        | &nbsp;|&nbsp;
+                        if username
+                            a(href='/users/logout') Logout
+                            | &nbsp;
+                        else
+                            a(href='/users/login') Login
+                            | &nbsp;|&nbsp;
+                            a(href='/users/register') Register
+                            | &nbsp;
+            if flash_message
+                p
+                    font(color='red')
+                        = flash_message
+            block body

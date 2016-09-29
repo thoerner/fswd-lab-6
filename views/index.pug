@@ -2,12 +2,25 @@ extends ./layout.pug
 block body
     h1 Hello world!
     p.lead
-      | This is coming from the
-      code views/index.pug
-      | file
+        | This is coming from the&nbsp;
+        code views/index.pug
+        | &nbsp;file
+    if username
+        p
+            strong Welcome #{username}!&nbsp;
+            | Not #{username}? Click here to #[a(href='/users/logout') logout].
+    else
+        p
+            | Click here to&nbsp;
+            a(href='/users/register') register
+            | . Already a user? Click here to&nbsp;
+            a(href='/users/login') login
+            | .
+
+
     ul
 
-    form.form-inline(method="POST" action="/tasks")
-    div.form-group
-      input.form-control(type="text" name="todo")
-    button#add.btn.btn-default Add Todo
+    form.form-inline(method='POST' action='/tasks')
+        div.form-group
+            input.form-control(type='text' name='todo')
+        button#add.btn.btn-default Add Todo
